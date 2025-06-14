@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Path-To-Anime</title>
+    <link rel="stylesheet" href="popup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Path-To-Anime</h1>
+
+        <div class="search-section">
+            <h3>Browse Anime to get details</h3>
+            <input type="text" id="searchInput" placeholder="Search anime...">
+            <button id="searchBtn">Search</button>
+        </div>
+        
+        <h2>OR</h2>
+        <div class="preferences-section">
+            <h3>Recommendation Preferences</h3>
+            <div>
+                <label>Genre:</label>
+                <select id="genreSelect">
+                    <option value="">Any</option>
+                    <option value="Action">"Comedy"</option>
+                    <option value="Action">Martial Arts</option>
+                    <option value="Action">Super Power</option>
+                    <option value="Action">Action</option>
+                    <option value="Adventure">Adventure</option>
+                    <!-- Add more genres from your dataset -->
+                </select>
+            </div>
+            <div>
+                <label>Type:</label>
+                <select id="typeSelect">
+                    <option value="">Any</option>
+                    <option value="Shonen">Shonen</option>
+                    <option value="Seinen">Seinen</option>
+                    <!-- Add more types -->
+                </select>
+            </div>
+            <div>
+                <label>Min Rating:</label>
+                <input type="number" id="minRating" min="0" max="10" step="0.1" value="7">
+            </div>
+            <button id="recommendBtn">Get Recommendations</button>
+        </div>
+
+        <div id="results" class="results-section"></div>
+    </div>
+
+    <script src="dataset.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>

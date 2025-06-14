@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Favorite Anime</title>
+    <link rel="stylesheet" href="styles/your_anime.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Your Favorite Anime <i class="fa-solid fa-heart"></i></h1>
+            <button class="btn-17" id="goback">
+                <span class="text-container">
+                    <span class="text">Go back</span>
+                </span>
+            </button>
+        </div>
+
+        <div class="stats-section">
+            <div class="stat-card">
+                <span class="stat-number" id="totalCount">0</span>
+                <span class="stat-label">Total Favorites</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="avgRating">0.0</span>
+                <span class="stat-label">Avg Rating</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="totalEpisodes">0</span>
+                <span class="stat-label">Total Episodes</span>
+            </div>
+        </div>
+
+        <div class="controls-section">
+            <div class="search-controls">
+                <input type="text" id="searchFavorites" placeholder="Search your favorites..." class="search-input">
+                <select id="sortBy" class="sort-select">
+                    <option value="addedAt">Recently Added</option>
+                    <option value="title">Title A-Z</option>
+                    <option value="rating">Rating High-Low</option>
+                    <option value="year">Year New-Old</option>
+                    <option value="episodes">Episodes Count</option>
+                </select>
+            </div>
+            
+            <div class="action-controls">
+                <button id="exportBtn" class="action-btn export-btn">
+                    <i class="fas fa-file-export"></i> Export
+                </button>
+                <button id="importBtn" class="action-btn import-btn">
+                    <i class="fas fa-file-import"></i> Import
+                </button>
+                <button id="clearAllBtn" class="action-btn clear-btn">
+                    <i class="fas fa-trash"></i> Clear All
+                </button>
+            </div>
+        </div>
+
+        <input type="file" id="importFile" accept=".json" style="display: none;">
+
+        <div id="loadingMessage" class="loading-message">
+            Loading your favorites...
+        </div>
+
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <div class="empty-icon"><i class="fa-regular fa-heart"></i></div>
+            <h3>No favorites yet!</h3>
+            <p>Start by searching for anime and adding them to your favorites.</p>
+            <button class="action-btn" onclick="window.location.href='search.html'">
+                Search Anime
+            </button>
+        </div>
+
+        <div id="favorites" class="favorites-section">
+            <!-- Favorites will be loaded here -->
+        </div>
+    </div>
+
+    <script src="dataset.js"></script>
+    <script src="scripts/storageService.js"></script>
+    <script src="scripts/your_anime.js"></script>
+</body>
+</html>

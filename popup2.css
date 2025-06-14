@@ -1,0 +1,62 @@
+body {
+  width: 380px;
+  height: 700px;
+  padding: 10px;
+  overflow: auto;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 250;
+  font-style: normal;
+  background-color: white;
+  color: black;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.search-section:hover {
+    box-shadow: 2px 2px 0 5px rgb(217, 216, 216);
+}
+.search-section, .preferences-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+input, select, button {
+  padding: 5px;
+}
+
+button {
+  background-color: #8a07e1;
+  padding: 9px;
+  color: white;
+  border-radius: 9px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5d0598;
+}
+
+.results-section {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.anime-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.anime-card h3 {
+  margin-top: 0;
+}
